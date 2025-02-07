@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Price Calculator</title> 
+    <title>Calculateur de Prix</title> 
     <style>
         /* Namespace all styles to #price-calculator-wrapper */ 
         #price-calculator-wrapper {
@@ -156,27 +156,27 @@
 <body>
 
     <div id="price-calculator-wrapper">
-        <h2>Price Calculator</h2>
+        <h2>Calculateur de Prix</h2>
 
         <div id="price-calculator-form">
             <!-- Location Dropdown -->
             <div class="form-group">
-                <label for="location">Select Home Location</label>
+                <label for="location">Sélectionnez l'emplacement du domicile</label>
                 <select id="location" name="location" required>
-                    <option value="">-- Select Home Location --</option>
+                    <option value="">-- Sélectionnez l'emplacement du domicile --</option>
                     <option value="palma-de-mallorca">Palma de Mallorca</option>
                     <option value="stockholm">Stockholm</option>
                     <option value="marbella">Marbella</option>
                     <option value="menorca">Menorca</option>
                     <option value="malta">Malta</option>
-                    <option value="cancun">Cancun</option>
+                    <option value="cancun">Cancún</option>
                     <option value="ibiza">Ibiza</option>
                     <option value="costa-brava">Costa Brava</option>
-                    <option value="st-tropez">St Tropez</option>
-                    <option value="corsica">Corsica</option>
+                    <option value="st-tropez">Saint-Tropez</option>
+                    <option value="corsica">Corse</option>
                     <option value="la-spezia">La Spezia</option>
                     <option value="jersey">Jersey</option>
-                    <option value="uk">UK</option>
+                    <option value="uk">Royaume-Uni</option>
                     <option value="amsterdam">Amsterdam</option>
                     <option value="bonaire">Bonaire</option>
                 </select>
@@ -184,27 +184,27 @@
 
             <!-- Membership Dropdown -->
             <div class="form-group">
-                <label for="membership">Select Membership</label>
+                <label for="membership">Sélectionnez l'adhésion</label>
                 <select id="membership" name="membership" required>
-                    <option value="">-- Select Membership --</option>
-                    <option value="unlimited-boating">Unlimited Boating</option>
-                    <option value="on-demand-boating">On Demand Boating</option>
+                    <option value="">-- Sélectionnez l'adhésion --</option>
+                    <option value="unlimited-boating">Navigation illimitée</option>
+                    <option value="on-demand-boating">Navigation à la demande</option>
                 </select>
             </div>
 
             <!-- Category Dropdown -->
             <div class="form-group" id="category-group" style="display:none;">
-                <label for="category">Select Boat Category</label>
+                <label for="category">Sélectionnez la catégorie de bateau</label>
                 <select id="category" name="category" required>
-                    <option value="">-- Select Category --</option>
+                    <option value="">-- Sélectionnez la catégorie --</option>
                 </select>
             </div>
 
             <!-- Package Dropdown -->
             <div class="form-group" id="package-group" style="display:none;">
-                <label for="package">Select Package</label>
+                <label for="package">Sélectionnez le forfait</label>
                 <select id="package" name="package" required>
-                    <option value="">-- Select Package --</option>
+                    <option value="">-- Sélectionnez le forfait --</option>
                     <!-- Options will be populated dynamically -->
                 </select>
             </div>
@@ -216,7 +216,7 @@
             <!-- Price Display -->
             <div id="price-display" style="display:none;">
                 <div class="price-row">
-                    <span>Price:</span>
+                    <span>Prix:</span>
                     <span><span id="price"></span> <span id="currency"></span></span>
                 </div>
             </div>
@@ -229,38 +229,37 @@
                     }
                 </style>
                 <br>
-                <h3 id="specific-h3">Looking for your dream boating life? Get in touch!</h3>
+                <h3 id="specific-h3">Vous rêvez de la vie nautique de vos rêves ? Contactez-nous !</h3>
 
                 <!-- Hidden Field for Lead Source -->
-<input type="hidden" id="lead-source" name="lead_source" value="Configurator">
-
+                <input type="hidden" id="lead-source" name="lead_source" value="Configurator">
 
                 <br>
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Nom</label>
                     <input type="text" id="name" name="name" required>
-                     <span id="name-error" style="color: red; font-size: 0.85rem; display: none;">Required</span>
+                     <span id="name-error" style="color: red; font-size: 0.85rem; display: none;">Obligatoire</span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
-                     <span id="email-error" style="color: red; font-size: 0.85rem; display: none;">Required</span>
+                     <span id="email-error" style="color: red; font-size: 0.85rem; display: none;">Obligatoire</span>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Optional Message</label>
+                    <label for="message">Message optionnel</label>
                     <textarea id="message" name="message"></textarea>
                 </div>
 
                 <!-- Submit Button -->
-                <button type="button" id="submit-button">Submit</button>
+                <button type="button" id="submit-button">Envoyer</button>
             </div>
 
             <!-- Confirmation Message -->
             <div id="confirmation" style="display:none;">
-                <h2>Thank You!</h2>
-                <p>Thank you for your interest in Agapi Boat Club.</p>
+                <h2>Merci !</h2>
+                <p>Merci pour votre intérêt pour Agapi Boat Club.</p>
             </div>
         </div>
     </div>
@@ -470,9 +469,9 @@
             function getPackageDisplayName(pkg) {
                 // Provide a friendly display name for packages
                 if (pkg === "PayGo-membership") {
-                    return "PayGo Only Membership";
+                    return "Adhésion PayGo uniquement";
                 } else if (pkg === "PayGo-package") {
-                    return "PayGo Package";
+                    return "Forfait PayGo";
                 } else {
                     return pkg.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
                 }
@@ -488,10 +487,10 @@
                 let additionalMessage = "";
                 if (packageSelected === "PayGo-membership") {
                     // Full original text for PayGo Only Membership
-                    additionalMessage = "Price for PayGo Membership fee applies to all Boat Categories and includes Onboarding.";
+                    additionalMessage = "Le tarif de l'adhésion PayGo s'applique à toutes les catégories de bateaux et comprend l'intégration.";
                 } else if (packageSelected === "PayGo-package") {
                     // Full text for PayGo Package
-                    additionalMessage = "Price for PayGo memberships applies to all Boat Categories. Price package for boat trips including Membership fee and Onboarding free of charge.";
+                    additionalMessage = "Le tarif des adhésions PayGo s'applique à toutes les catégories de bateaux. Le forfait pour les sorties en bateau inclut la cotisation d'adhésion et l'intégration gratuite.";
                 }
 
                 onDemandMessage.innerHTML = additionalMessage;
@@ -506,8 +505,8 @@
                 unlimitedMessage.style.display = "none";
                 onDemandMessage.style.display = "none";
 
-                categorySelect.innerHTML = '<option value="">-- Select Category --</option>';
-                packageSelect.innerHTML = '<option value="">-- Select Package --</option>';
+                categorySelect.innerHTML = '<option value="">-- Sélectionnez la catégorie --</option>';
+                packageSelect.innerHTML = '<option value="">-- Sélectionnez le forfait --</option>';
                 categoryGroup.style.display = "none";
                 packageGroup.style.display = "none";
                 priceDisplay.style.display = "none";
@@ -537,7 +536,7 @@
                 } else if (membership === "unlimited-boating") {
                     // Show unlimited message
                     unlimitedMessage.style.display = "block";
-                    unlimitedMessage.innerHTML = "We offer special prices for Dual-homes, Only summer, Only weekdays or Off-season.";
+                    unlimitedMessage.innerHTML = "Nous proposons des tarifs spéciaux pour les résidences doubles, uniquement en été, uniquement en semaine ou hors saison.";
                     // Show category group if options are available
                     if (prices[location]?.[membership]) {
                         categoryGroup.style.display = "block";
@@ -566,7 +565,7 @@
                         updateOnDemandMessage(selectedPackage);
                         const price = prices[location]?.[membership]?.[selectedPackage];
                         if (price === null) {
-                            priceSpan.textContent = "Prices for 2025 available soon";
+                            priceSpan.textContent = "Tarifs pour 2025 disponibles prochainement";
                             currencySpan.textContent = "";
                             priceDisplay.style.display = 'block';
                         } else if (price) {
@@ -584,7 +583,7 @@
                     if (location && category) {
                         const price = prices[location]?.[membership]?.[category];
                         if (price === null) {
-                            priceSpan.textContent = "Prices for 2025 available soon";
+                            priceSpan.textContent = "Tarifs pour 2025 disponibles prochainement";
                             currencySpan.textContent = "";
                             priceDisplay.style.display = 'block';
                         } else if (price) {
@@ -605,65 +604,63 @@
             const submitButton = wrapper.querySelector("#submit-button");
 
             submitButton.addEventListener("click", function () {
-    const nameField = wrapper.querySelector("#name");
-    const emailField = wrapper.querySelector("#email");
-    const messageField = wrapper.querySelector("#message");
-    const locationField = wrapper.querySelector("#location");
-    const membershipField = wrapper.querySelector("#membership");
-    const categoryField = wrapper.querySelector("#category");
-    const packageField = wrapper.querySelector("#package");
-    const priceField = priceSpan.textContent;
-    const currencyField = currencySpan.textContent;
-    const leadSourceField = wrapper.querySelector("#lead-source");
+                const nameField = wrapper.querySelector("#name");
+                const emailField = wrapper.querySelector("#email");
+                const messageField = wrapper.querySelector("#message");
+                const locationField = wrapper.querySelector("#location");
+                const membershipField = wrapper.querySelector("#membership");
+                const categoryField = wrapper.querySelector("#category");
+                const packageField = wrapper.querySelector("#package");
+                const priceField = priceSpan.textContent;
+                const currencyField = currencySpan.textContent;
+                const leadSourceField = wrapper.querySelector("#lead-source");
 
-    // Basic validation
-    if (!nameField.value.trim() || !emailField.value.trim()) {
-        // Display errors (optional inline error handling can be added here)
-        return;
-    }
+                // Basic validation
+                if (!nameField.value.trim() || !emailField.value.trim()) {
+                    // Display errors (optional inline error handling can be added here)
+                    return;
+                }
 
-    // Data to send
-    const formData = {
-        name: nameField.value.trim(),
-        email: emailField.value.trim(),
-        message: messageField ? messageField.value.trim() : "",
-        location: locationField.value,
-        membership: membershipField.value,
-        category: categoryField ? categoryField.value : "",
-        package: packageField ? packageField.value : "",
-        price: priceField ? priceField : "",
-        currency: currencyField ? currencyField : "",
-        lead_source: leadSourceField.value
-    };
+                // Data to send
+                const formData = {
+                    name: nameField.value.trim(),
+                    email: emailField.value.trim(),
+                    message: messageField ? messageField.value.trim() : "",
+                    location: locationField.value,
+                    membership: membershipField.value,
+                    category: categoryField ? categoryField.value : "",
+                    package: packageField ? packageField.value : "",
+                    price: priceField ? priceField : "",
+                    currency: currencyField ? currencyField : "",
+                    lead_source: leadSourceField.value
+                };
 
-    // Send to Make.com webhook
-    fetch("https://hook.eu2.make.com/yh6gymw330shtcvjgiszzw1iyyozezbl", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-    }).then(response => {
-        if (response.ok) {
-            console.log("Form data sent to Make.com successfully.");
-        } else {
-            console.error("Failed to send form data to Make.com.");
-        }
-    }).catch(error => console.error("Error sending data to Make.com:", error));
+                // Send to Make.com webhook
+                fetch("https://hook.eu2.make.com/yh6gymw330shtcvjgiszzw1iyyozezbl", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                }).then(response => {
+                    if (response.ok) {
+                        console.log("Données du formulaire envoyées à Make.com avec succès.");
+                    } else {
+                        console.error("Échec de l'envoi des données du formulaire à Make.com.");
+                    }
+                }).catch(error => console.error("Erreur lors de l'envoi des données à Make.com:", error));
 
-    // Continue with EmailJS logic
-    emailjs.send("service_bp6qapf", "template_oymlxox", formData).then(
-        function () {
-            contactForm.style.display = 'none';
-            confirmation.style.display = 'block';
-        },
-        function (error) {
-            console.error("Failed to send email:", error);
-        }
-    );
-});
-
-
+                // Continue with EmailJS logic
+                emailjs.send("service_bp6qapf", "template_oymlxox", formData).then(
+                    function () {
+                        contactForm.style.display = 'none';
+                        confirmation.style.display = 'block';
+                    },
+                    function (error) {
+                        console.error("Échec de l'envoi de l'email:", error);
+                    }
+                );
+            });
 
             locationSelect.addEventListener('change', updateCategories);
             membershipSelect.addEventListener('change', updateCategories);
